@@ -23,6 +23,7 @@ $(function () {
         return mot;
     }
     function afficheCitation() {
+        const target =   document.querySelector('#citation');
 
         var counter = parseInt(prompt("le nombre de citations générées"))
 
@@ -39,11 +40,11 @@ $(function () {
                             var mot2 = random(list2);
                             var mot3 = random(list3);
 
-                            let phrase =  i + ' ' + mot1 + ' ' + mot2 + ' ' + mot3 + ' .'
+                            let phrase =  (i+1) + ' ' + mot1 + ' ' + mot2 + ' ' + mot3 + ' .'
 
                             console.log(phrase)
                             console.log(target)
-                            target.innerText += "<br>" + phrase
+                            target.innerHTML += "<br>" + phrase
                         }
                         break;
 
@@ -61,19 +62,20 @@ $(function () {
                 alert('tapez un nombre entre 1 à 5 !')
             }
 
-            console.log(counter)
+            console.log("counter",counter);
+            setTimeout(afficheQuitter, 100);
+
+    }
+
+    function afficheQuitter(){
+
+        var answer;
+        answer = prompt("voulez vous quitter le jeu ?");
+        if (answer !== 'oui') afficheCitation();
 
     }
     document.querySelector('#submit').onclick = () => {
-        const target =   document.querySelector('#citation')
-        var answer;
-       // while (answer !== 'oui') {
-
-            
-
-            //answer = prompt("voulez vous quitter le jeu ?")
-
-        //}
+       afficheCitation()
     };
 })
 
