@@ -1,5 +1,5 @@
 $(function () {
-
+    wordEnglish = false
     /** add a list of suject */
     const list1 = ["Quoi qu'on dise concernant", "Tant que durera ",
         "Dans le cas particulier de", "En ce qui concerne",
@@ -15,6 +15,25 @@ $(function () {
     /** add a list of complement */
     const list3 = ["général", "conjoncturelle", "induite", "contextuelle", "observéé", "de la situation",
         "de confiance", "que nous constatons", "ces dernier temps", " avec beaucoup de recul", "conjoncturelle"];
+
+    /**
+     *  citation en anglais
+     *  add a list of suject */
+    const list4 = ["Someone’s sitting in the shade today", "Never give up . Today is hard",
+        "Your time is limited", "Nothing will work",
+        "What would you do", "It’s not about ideas", "It is hard to fail",
+        "It is our choices", "If you want to live a happy life", "You’re not obligated to win", "Move fast and break things"];
+
+    /** add a list of verb */
+    const list5 = ["because someone planted a tree ", "tomorrow will be worse ", "so don’t waste it",
+        "unless ", "if ", "who ",
+        "but it is worse ", "that show what we truly are ", "tie it to a goal ",
+        "You’re obligated to keep trying", 'Unless you are breaking stuff'];
+
+    /** add a list of complement */
+    const list6 = ["a long time ago", "but the day after tomorrow will be sunshine", "living someone else’s life", "you do", "you were not afraid",
+        "It’s about making ideas happen", "never to have tried to succeed", "far more than our abilities", " not to people or things", "To the best you can do everyday"
+        ,"you are not moving fast enough"];
 
     /** fuction for return a word  */
     function random(list) {
@@ -32,7 +51,7 @@ $(function () {
                 var typeDeCitation = parseInt(prompt("choisir le type de citation 1 pour le francais 2 pour l'anglais."))
 
                 switch (typeDeCitation) {
-
+                    // citation en français
                     case 1:
                         target.innerText = ""
                         for (let i = 0; i < counter; i++) {
@@ -47,9 +66,20 @@ $(function () {
                             target.innerHTML += "<br>" + phrase
                         }
                         break;
-
+                    //citation en anglais
                     case 2:
-                        alert('anglais')
+                        target.innerText = ""
+                        for (let i = 0; i < counter; i++) {
+                            var mot1 = random(list4);
+                            var mot2 = random(list5);
+                            var mot3 = random(list6);
+
+                            let phrase =  (i+1) + ' ' + mot1 + ' ' + mot2 + ' ' + mot3 + ' .'
+
+                            console.log(phrase)
+                            console.log(target)
+                            target.innerHTML += "<br>" + phrase
+                        }
                         break;
 
                     default :
@@ -62,7 +92,7 @@ $(function () {
                 alert('tapez un nombre entre 1 à 5 !')
             }
 
-            console.log("counter",counter);
+            //console.log("counter",counter);
             setTimeout(afficheQuitter, 100);
 
     }
