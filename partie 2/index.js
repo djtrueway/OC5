@@ -42,7 +42,7 @@ $(function () {
         return mot;
     }
     function afficheCitation() {
-        const target =   document.querySelector('#citation');
+        const target = document.querySelector('#citation');
 
         var counter = parseInt(prompt("le nombre de citations générées"))
 

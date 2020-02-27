@@ -24,7 +24,7 @@ $(function(){
     }
 
     /** add event on the click button  */
-    document.querySelector('#submit').onclick = function (){
+    $('#submit').click( function (){
         var mot1 = random(list1);
         var mot2 = random(list2);
         var mot3 = random(list3);
@@ -32,8 +32,8 @@ $(function(){
         let phrase = mot1 +' '+ mot2 + ' ' + mot3 +' .'
         /** display a sentence */
         console.log(phrase)
-        document.querySelector('#citation').innerText = phrase;
+        $('#citation').text(phrase);
 
-    };
+    });
 })
 
